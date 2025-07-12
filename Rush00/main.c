@@ -6,14 +6,14 @@
 /*   By: matnusko <matnusko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 21:20:22 by matnusko          #+#    #+#             */
-/*   Updated: 2025/07/12 10:39:13 by matnusko         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:35:59 by matnusko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush4(int column, int line);
+void	rush(int x, int y);
 
 int	main(void)
 {
-	rush4(5, 4);
+	rush(5, 4);
 	return (0);
 }

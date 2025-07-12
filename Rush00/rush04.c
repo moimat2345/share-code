@@ -6,13 +6,13 @@
 /*   By: matnusko <matnusko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 17:37:23 by matnusko          #+#    #+#             */
-/*   Updated: 2025/07/12 10:39:07 by matnusko         ###   ########.fr       */
+/*   Updated: 2025/07/12 11:37:34 by matnusko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	first_line(column, col)
+void	first_line(int column, int col)
 {
 	if (col == 0)
 	{
@@ -29,7 +29,7 @@ void	first_line(column, col)
 
 }
 
-void	last_line(column, col)
+void	last_line(int column, int col)
 {
 	if (col == 0)
 	{
@@ -45,7 +45,7 @@ void	last_line(column, col)
 	}
 }
 
-void	midle_line(column, col)
+void	midle_line(int column, int col)
 {
 	if (col == 0 || col == column -1)
 	{
@@ -58,36 +58,36 @@ void	midle_line(column, col)
 
 }
 
-char	line_def(int line, int column, int lin, int col)
+void	make_line(int line, int column, int lin, int col)
 {
-	if (lin == 0)
+	while (col < column)
 	{
-		first_line(column, col);
-	}
-	else if (lin == line -1)
-	{
-		last_line(column, col);
-	}
-	else
-	{
-		midle_line(column, col);
+		if (lin == 0)
+		{
+			first_line(column, col);
+		}
+		else if (lin == line -1)
+		{
+			last_line(column, col);
+		}
+		else
+		{
+			midle_line(column, col);
+		}
+		col++;
 	}
 }
 
-void	rush4(int column, int line)
+void	rush(int x, int y)
 {
 	int		lin;
 	int		col;
 
 	lin = 0;
-	while (lin < line)
+	col = 0;
+	while (lin < y)
 	{
-		col = 0;
-		while (col < column)
-		{
-			line_def(line, column, lin, col);
-			col++;
-		}
+		make_line(y, x, lin, col);
 		ft_putchar('\n');
 		lin++;
 	}
