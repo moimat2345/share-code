@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush04.c                                           :+:      :+:    :+:   */
+/*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matnusko <matnusko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 17:37:23 by matnusko          #+#    #+#             */
-/*   Updated: 2025/07/12 17:22:53 by matnusko         ###   ########.fr       */
+/*   Updated: 2025/07/12 15:54:28 by matnusko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ void	first_line(int column, int col)
 {
 	if (col == 0)
 	{
-		ft_putchar('A');
+		ft_putchar('/');
 	}
 	else if (col == column -1)
 	{
-		ft_putchar('C');
+		ft_putchar('\\');
 	}
 	else
 	{
-		ft_putchar('B');
+		ft_putchar('*');
 	}
 }
 
@@ -32,15 +32,15 @@ void	last_line(int column, int col)
 {
 	if (col == 0)
 	{
-		ft_putchar('C');
+		ft_putchar('\\');
 	}
 	else if (col == column -1)
 	{
-		ft_putchar('A');
+		ft_putchar('/');
 	}
 	else
 	{
-		ft_putchar('B');
+		ft_putchar('*');
 	}
 }
 
@@ -48,7 +48,7 @@ void	midle_line(int column, int col)
 {
 	if (col == 0 || col == column -1)
 	{
-		ft_putchar('B');
+		ft_putchar('*');
 	}
 	else
 	{
@@ -83,11 +83,6 @@ void	rush(int x, int y)
 
 	lin = 0;
 	col = 0;
-	if (x <= 0 || y <= 0)
-	{
-		return ;
-	}
-	
 	while (lin < y)
 	{
 		make_line(y, x, lin, col);
